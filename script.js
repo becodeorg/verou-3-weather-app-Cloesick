@@ -1,17 +1,22 @@
 // apiKey:687a0170dedccd305846958f004f8301
-http://api.openweathermap.org/data/2.5/weather?q=Denver&appid=687a0170dedccd305846958f004f8301
+// http://api.openweathermap.org/data/2.5/weather?q=Denver&appid=687a0170dedccd305846958f004f8301
 
 let weather = {
     apiKey: "687a0170dedccd305846958f004f8301",
-    fetchWeather: function(city){
-
+        fetchWeather: function(city){
         fetch(
-            "http://api.openweathermap.org/data/2.5/weather?q=" +
+            "https://api.openweathermap.org/data/2.5/weather?q=" +
              city +
              "&units=metric&appid=" +
              this.apiKey
         )
-        .then((response) => response.json())
+        .then((response) => {
+            if(!response.ok){
+                alert("No weather found.");
+                throw new Error("No weather found.");
+            }
+                return response.json();
+            })
         .then((data)=> this.displayWeather(data));
     },
     displayWeather: function(data) {
@@ -31,19 +36,19 @@ let weather = {
     },
 
     search: function() {
-        this.fetchWeather(document.querySelector(".search-button"))
+        this.fetchWeather(document.querySelector(".search-bar").value);
     },
 };
 
 document
     .querySelector(".search button")
-    .addEventListener(weather.search()
+    // .addEventListener(weather.search()
     .addEventListener("click", function() {
         weather.search();
-    }),
+    });
 
 document
-    .querySelector(".search-bar").value)
+    .querySelector(".search-bar")
     .addEventListener("keyup", function(event){
     if(event.key == "Enter"){
         weather.search();

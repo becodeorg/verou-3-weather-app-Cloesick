@@ -6,10 +6,9 @@ body{
     margin: 0;
     font-family: 'Roboto Slab', serif;
     /* background-color: #222; */
-    background-image: radial-gradient(white, lightblue, gray, purple, orange);
     /* background:  USE THE 3D BOX FOR THIS*/ 
     font-size: 120%;
-    background-image: url("img/storm.jpg");
+    background-image: url('https://source.unsplash.com/1600x900/?landscape');
     
 }
 
@@ -51,7 +50,7 @@ button:hover{
     cursor: pointer;
 }
 
-h1.temperature{
+h1.temp{
     margin: 0;
     margin-bottom: .5em;
 }
@@ -70,6 +69,7 @@ input.search-bar{
 
 .description{
     text-transform: capitalize;
+    margin-left: 8px;
 }
 
 
@@ -86,7 +86,7 @@ input.search-bar{
 
 }
 
-/* .weather.loading:after{
+.weather.loading:after {
     visibility: visible;
     content: "loading...";
     color: white;
@@ -94,4 +94,4 @@ input.search-bar{
     top: 0;
     left: 20px;
     
-} */
+}
