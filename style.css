@@ -53,6 +53,7 @@ button:hover{
 
 h1.temperature{
     margin: 0;
+    margin-bottom: .5em;
 }
 
 input.search-bar{
@@ -65,4 +66,31 @@ input.search-bar{
     font-family: inherit;
     font-size: 200%;
     width: calc(100% - 100px);
+}
+
+.description{
+    text-transform: capitalize;
+}
+
+
+.flex{
+    display: flex;
+    text-align: center;
+    margin-left: 8px;
+}
+
+.weather.loading{
+    visibility: hidden;
+    position: relative;
+}
+
+.weather.loading::after{
+    visibility: visible;
+    content: "loading...";
+    color: white;
+    max-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    
 }
