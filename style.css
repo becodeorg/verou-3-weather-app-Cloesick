@@ -82,15 +82,16 @@ input.search-bar{
 .weather.loading{
     visibility: hidden;
     position: relative;
+    max-height: 20px;
+
 }
 
-.weather.loading::after{
+/* .weather.loading:after{
     visibility: visible;
     content: "loading...";
     color: white;
-    max-height: 20px;
     position: absolute;
     top: 0;
     left: 20px;
     
-}
+} */
