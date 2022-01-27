@@ -1,34 +1,32 @@
-api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}// apiKey = 687a0170dedccd305846958f004f8301
-apiKey=687a0170dedccd305846958f004f8301
-example city: London
+// api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}// apiKey = 687a0170dedccd305846958f004f8301
+// apiKey=687a0170dedccd305846958f004f8301
+// example city: London
 
 function GetInfo(){
-    const newName= document.getElementById("cityName");
+    const newName= document.getElementById("cityInput");
     const cityName= document.getElementById("cityName");
-    cityName.innerHTML="--"+newName.value+"--";
-}
+    cityName.innerHTML ="--"+newName.value+"--";
 
-fetch("api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&units=metric&appid=values;={API key}// apiKey =687a0170dedccd305846958f004f8301");
+
+fetch('https://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appid=687a0170dedccd305846958f004f8301')
 //now adding the '+newName.value+'
 .then(response => response.json())
-.then(data =>
-    {
+.then(data => {
+    
+// Getting the min and max temperatures per day
+        for(i=0; i<5; i++){
+            document.getElementById("day"+ 
+            (i+1) + "Min").innerHTML = "Min: " + 
+            Number(data.list[i].main.temp_min - 280.14).toFixed(1)+"°";
+        }
+// min temperature per day done
+
         for(i=0; i<5; i++){
             document.getElementById("day"+
-            (i+1)+("Min").innerHTML = "Min:" + 
-            Number(data.list[i].main.temp_min -280.14).toFixed(1)+"°");
+            (i+1)+"Max").innerHTML = "Max: " + 
+            Number(data.list[i].main.temp_max - 281.18).toFixed(2) +"°";
         }
-        for(i=0; i<5; i++){
-            document.getElementById("day"+
-            (i+1)+("Max").innerHTML = "Max:" + 
-            Number(data.list[i].main.temp_max -281.18).toFixed(1)+"°");
-        }
-        for(i=0; i<5; i++){
-            document.getElementById("day"+
-            (i+1)+("Max").innerHTML = "Max:" + 
-            Number(data.list[i].main.temp_max -281.18).toFixed(1)+"°");
-        }
-        
+// max temperature per day done
 //How to get icon URL
 // For code 500 - light rain icon = "10d". See below a full list of codes
 // URL is http://openweathermap.org/img/wn/10d@2x.png
@@ -37,14 +35,12 @@ fetch("api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&units=metric
 // loop through the website 5times for 5 days
 
         for(i=0; i<5; i++){
-            document.getElementById("day"+
-            (i+1)+("Max").innerHTML = "Max:" + 
-            document.getElementById("img" + (i+1)).src ="http://openweathermap.org/img/wn" + data.list[i].weather[0].icon+".png"
-            );
+            document.getElementById("img" + (i+1)).src = "http://openweathermap.org/img/wn/"+data.list[i].weather[0].icon+".png";
         }
+//---------------------------------------------------------------
     })
 
-    .catch(err => alert("Data not found"))
+    .catch(error => alert("Data not found"))
 }
 
 function DefaultScreen(){
@@ -52,12 +48,12 @@ function DefaultScreen(){
     GetInfo();
 }
 
-const a = new Date ();
-weekday= ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+const d = new Date ();
+const weekday= ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function CheckDay(day){
-    if(day + day.getDay()>6){
-        return day +day.getDay()-7;
+    if(day + d.getDay()>6){
+        return day +d.getDay()-7;
     }
     else{
         return day +d.getDay();
