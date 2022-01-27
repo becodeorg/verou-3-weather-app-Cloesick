@@ -14,7 +14,7 @@
 
 *{
     color: rgb(7, 1, 1);
-    background-image: src= "/img/lake.jpg";
+    background: url('https://source.unsplash.com/1600x900/?" + cityInput + " ');
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
