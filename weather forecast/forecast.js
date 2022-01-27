@@ -27,11 +27,11 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appid
             Number(data.list[i].main.temp_max - 281.18).toFixed(1) +"°";
         }
 
-        for(i=0; i<5; i++){
-            document.getElementById("day"+
-            (i+1)+"humidity").innerHTML = "Humidity: " + 
-            Number(data.list[i].main.humidity - 86).toFixed(3) +"%";
-        }
+        // for(i=0; i<5; i++){
+        //     document.getElementById("day"+
+        //     (i+1)+"humidity").innerHTML = "Humidity: " + 
+        //     Number(data.list[i].main.humidity - 86).toFixed(3) +"%";
+        // }
 
         
 // max temperature per day done
@@ -41,27 +41,35 @@ fetch('http://api.openweathermap.org/data/2.5/forecast?q='+newName.value+'&appid
 // http://openweathermap.org/img/wn
 // refer to the weather icon through the data => list => weather => icon
 // loop through the website 5times for 5 days
+        //  for(i=0; i<5; i++){
+        //     document.getElementById("day"+
+        //     (i+1)+"description").innerText = description; 
+        //     (data.list[i].weather[0].description);
+        // }
 
         for(i=0; i<5; i++){
             document.getElementById("img" + (i+1)).src = "http://openweathermap.org/img/wn/"+data.list[i].weather[0].icon+ ".png";
         }
-        for(i=0; i<5; i++){
-            document.getElementById("description" + (i+1)).src = "http://openweathermap.org/img/wn/"+data.list[i].weather[0].description;
-        }
+       
 //---------------------------------------------------------------
     })
 
-    .catch(error => alert("Data not found"))
-}
+    // displayWeather: function (data){
+    //     const {description} = data.weather[0];
+    //     document.querySelector(".description").innerText = description;
+    // }
 
+    .catch(error => alert("Data not found"));
+}
+//DefaultScreen for when no city is searched for
 function DefaultScreen(){
     document.getElementById("cityInput").defaultValue = "London";
     GetInfo();
 }
-
+//checkDate
 const d = new Date ();
 const weekday= ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
+// checkDay
 function CheckDay(day){
     if(day + d.getDay()>6){
         return day +d.getDay()-7;
@@ -71,7 +79,7 @@ function CheckDay(day){
     }
 }
 for(i=0; i<5; i++){
-    document.getElementById("day"+(i+1)).innerHTML = weekday [CheckDay(i)];
+    document.getElementById("day"+ (i+1)).innerHTML = weekday[CheckDay(i)];
 }
 
         

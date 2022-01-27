@@ -23,6 +23,7 @@ body{
     text-align: center;
     opacity: 80%;
     
+    
 }
 
 .search{
@@ -48,9 +49,10 @@ button{
 
 button:hover{
     transform:scale(1.5);
-    /* transform: rotate(90deg); */
+    transform: rotate(90deg);
     background: #7c7c7c2b;
-    cursor: pointer;
+    cursor:pointer;
+
 }
 
 h1.temp{
@@ -74,16 +76,13 @@ input.search-bar{
 .description{
     text-transform: capitalize;
     margin-left: 8px;
-    
+    text-align: center;
     
 }
-
-
 
 .flex{
     display: flex;
     text-align: center;
-  
 }
 
 .weather.loading{
