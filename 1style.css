@@ -18,7 +18,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#cityInput, #cityName, #inputContainer, button{
+.cityInput, .cityName, .inputContainer, button{
     margin: 3px;
     padding: 5px;
     text-align: center;
@@ -55,7 +55,7 @@
 
 .icons{
     display: inline-block;
-    float: left;
+    /* float: left; */
     height: 200px;
     width: 190px;
     margin: 20px;
@@ -92,6 +92,17 @@
 }
 
 .maxValues{
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+    height: 25px;
+    width: 85px;
+    margin: 0;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.humidity{
     text-align: center;
     display: inline-block;
     border-radius: 5px;
