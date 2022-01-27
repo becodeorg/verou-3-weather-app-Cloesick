@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="1style.css">
+    <title>Weather forecast</title>
+</head>
+<body>
+    <div class="heading">
+        <h1 id="Para1"> Five days weather forecast</h1>    
+    <p id="inputContainer">City: <input type="text" id ="cityInput"></p>
+    <button>Search</button>
+    <h2 id="cityName">--London--</h2>
+    </div>
+    <div id="weatherContainer">
+        <div id="iconsContainer">
+            <div class="icon">
+                <p class= "weather" idd="day1"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img1"alt=""></div>
+                <p class="minValues" id="day1Min">Loading....</p>
+                <p class="maxValues" id="day1Max">Loading....</p>
+            </div>
+            <div class="icon">
+                <p class= "weather" idd="day2"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img2"alt=""></div>
+                <p class="minValues" id="day2Min">Loading....</p>
+                <p class="maxValuess" id="day2Max">Loading....</p>
+            </div>
+            <div class="icon">
+                <p class= "weather" idd="day3"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img3"alt=""></div>
+                <p class="minValues" id="day3Min">Loading....</p>
+                <p class="maxValues" id="day3Max">Loading....</p>
+            </div>
+            <div class="icon">
+                <p class= "weather" idd="day4"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img4"alt=""></div>
+                <p class="minValues" id="day4Min">Loading....</p>
+                <p class="maxValues" id="day4Max">Loading....</p>
+            </div>
+            <div class="icon">
+                <p class= "weather" idd="day5"></p>
+                <div class="image"><img src="dots.png" class="imgClass" id="img5"alt=""></div>
+                <p class="minValues" id="day5Min">Loading....</p>
+                <p class="maxValues" id="day5Max">Loading....</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="1script.js"></script>
+</body>
+</html>

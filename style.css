@@ -29,18 +29,21 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    border: rgb(21, 163, 230) 2px solid;
+    border-radius: 24px;
+
 
 }
 
 button{
     margin: 0.5em;
     border-radius: 24px;
-    border: rgb(41, 85, 105) 2px solid;
+    border: rgb(21, 163, 230) 2px solid;
     background-color: #7c7c7c2b;
     height: 46px;
     width: 46px;
     outline: none;
+    transition: 0.2s ease-in-out;
 }
 
 button:hover{
@@ -53,6 +56,7 @@ button:hover{
 h1.temp{
     margin: 0;
     margin-bottom: .5em;
+    
 }
 
 input.search-bar{
@@ -70,13 +74,16 @@ input.search-bar{
 .description{
     text-transform: capitalize;
     margin-left: 8px;
+    
+    
 }
+
 
 
 .flex{
     display: flex;
     text-align: center;
-    margin-left: 8px;
+  
 }
 
 .weather.loading{
