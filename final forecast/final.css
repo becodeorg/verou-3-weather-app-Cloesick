@@ -45,7 +45,11 @@ body{
 
 .place-container{
     text-align: end;
+    font-size: 30px;
+}
 
+.place-container:hover.time-zone{
+    transform:scale(1.2);
 }
 
 .place-container.time-zone{
@@ -54,7 +58,7 @@ body{
 }
 
 .place-container.country{
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 700;
 }
 
