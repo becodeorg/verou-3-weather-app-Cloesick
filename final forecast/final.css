@@ -64,12 +64,13 @@ body{
 
 .current-info .others{
     display: flex;
-    flex-direction: column;
+    font-size: x-large;
+    flex-direction:column-reverse;
     background: rgba(24, 24, 27, 0.6);
     padding: 20px;
     border-radius: 10px;
     margin: 10px 0;
-    border: 1px solid #eee;
+    border: 5px solid #eee;
 }
 /* this 0.6 makes opacity possible  */
 
